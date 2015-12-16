@@ -1,0 +1,28 @@
+.header-image
+{
+  height:7em;
+  width:auto;
+  border-style:solid;
+}
+.nav-image
+{
+  height:3em;
+  width:auto;
+  padding-left:3em;
+}
+.header-div{
+  padding-left:5em;
+}
+
+.nav-div{
+  padding-left:20em;
+}
+
+.submission
+{
+  padding-left:70em;
+}
+
+.startover{
+  padding-left:70em;
+}
