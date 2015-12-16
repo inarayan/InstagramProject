@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,19 +18,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app='myApp' ng-controller='instagramCtrl'>
     <div class="container">
         <div class='jumbotron'>
           <div class="row">
             <div class='col-md-offset-2 col-md-8 col-md-offset-2' style='text-align:center;margin-top:10em'>
               <img class='img-responsive ' src="img/ng-instagram.png"></img>
               <br>
-              <form name='instaform'>
+              <form name='instaform' ng-submit='submit()'  novalidate>
               <div class='col-md-12'style="margin-bottom:1em">
-              <input type='text' placeholder="Enter a tag to search" style='margin-bottom:0px'></input>
+              <input type='text' name='searchtext' placeholder="Enter a tag to search" style='margin-bottom:0px' ng-model='searchfeild' required></input>
               <button type="submit" style=''>Submit</button>
+              <span ng-show='instaform.$submitted && instaform.searchtext.$error.required' class='error'>Please enter text to search</span>
               </div>
               </form>
+
               <div class='searching-text'>Searching instagram with photos tagged as cats</div>
               <div class='search-results'>We found n number of cats for you</div>
               <div class='search-results'>There are '0' search results</div>
@@ -41,5 +44,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-messages.js"></script>
+    <script src="js/myApp.js"></script>
+
+
   </body>
 </html>
