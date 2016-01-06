@@ -25,9 +25,9 @@
             <div class='col-md-offset-2 col-md-8 col-md-offset-2' style='text-align:center;margin-top:10em'>
               <img class='img-responsive ' src="img/ng-instagram.png"></img>
               <br>
-              <form name='instaform' ng-submit='submit()'  novalidate>
+              <form name='instaform' ng-submit='submitsearch()'  novalidate>
               <div class='col-md-12'style="margin-bottom:1em">
-              <input type='text' name='searchtext' placeholder="Enter a tag to search" style='margin-bottom:0px' ng-model='searchfeild' required></input>
+              <input type='text' name='searchtext' placeholder="Enter a tag to search" style='margin-bottom:0px' ng-model='tag' required></input>
               <button type="submit" style=''>Submit</button>
               <span ng-show='instaform.$submitted && instaform.searchtext.$error.required' class='error'>Please enter text to search</span>
               </div>
@@ -36,6 +36,12 @@
               <div class='searching-text'>Searching instagram with photos tagged as cats</div>
               <div class='search-results'>We found n number of cats for you</div>
               <div class='search-results'>There are '0' search results</div>
+
+              <div class="image-searchfound" ng-repeat="result in $scope.photoobj">
+                <h1>{{result}}</h1>
+                <img ng-src='https://farm{{result.farm}}.staticflickr.com/{{result.server}}/{{result.id}}_{{result.secret}}.jpg'/>
+              </div>
+
             </div>
           </div>
         </div>
